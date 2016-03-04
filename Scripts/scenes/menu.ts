@@ -4,6 +4,7 @@ module scenes {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
         private _menuLabel: objects.Label;
         private _startButton: objects.Button;
+        private _backgroundImage: createjs.Bitmap;
         
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -14,19 +15,24 @@ module scenes {
         
         // Start Method
         public start(): void {
-            //Add Menu Label
-            this._menuLabel = new objects.Label(
-                "MENU SCENE", "60px Consolas",
-                "#000000",
-                config.Screen.CENTER_X, config.Screen.CENTER_Y);
-            this.addChild(this._menuLabel);
+            
+              // add background image to the scene
+            this._backgroundImage = new createjs.Bitmap(assets.getResult("MenuBackground"));
+            this.addChild(this._backgroundImage);  
+            
+            // //Add Menu Label
+            // this._menuLabel = new objects.Label(
+            //     "MENU SCENE", "60px Consolas",
+            //     "#000000",
+            //     config.Screen.CENTER_X, config.Screen.CENTER_Y);
+            // this.addChild(this._menuLabel);
             
             
             // add the Start button to the MENU scene
             this._startButton = new objects.Button(
                 "StartButton",
                 config.Screen.CENTER_X,
-                config.Screen.CENTER_Y + 180);
+                config.Screen.CENTER_Y + 100);
             this.addChild(this._startButton);
             
             // Start Button event listener

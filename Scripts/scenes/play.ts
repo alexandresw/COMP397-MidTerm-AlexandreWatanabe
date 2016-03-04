@@ -2,6 +2,7 @@
 module scenes {
     export class Play extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
+        private _backgroundImage: createjs.Bitmap;
         private _playLabel: objects.Label;
         
         private _dice1Image: createjs.Bitmap;
@@ -13,8 +14,6 @@ module scenes {
         
         private _dice1Number: number;
         private _dice2Number: number;
-        
-        private 
         
         private _rollButton: objects.Button; 
         
@@ -28,6 +27,9 @@ module scenes {
         // Start Method
         public start(): void {
 
+            // add background image to the scene
+            this._backgroundImage = new createjs.Bitmap(assets.getResult("PlayBackground"));
+            this.addChild(this._backgroundImage);  
             
             this._dice1Image = new createjs.Bitmap(assets.getResult("Dice1"));
             this._dice1Image.x = config.Screen.CENTER_X - 250;
@@ -40,11 +42,11 @@ module scenes {
             this.addChild(this._dice2Image);  
             
              //Add Play Label
-            this._dice1Label = new objects.Label( "1","40px Consolas",  "#000000",  config.Screen.CENTER_X - 150,config.Screen.CENTER_Y + 80);
+            this._dice1Label = new objects.Label( "1","40px Consolas",  "#FFF",  config.Screen.CENTER_X - 150,config.Screen.CENTER_Y + 80);
             this.addChild(this._dice1Label);
             
              //Add Play Label
-            this._dice2Label = new objects.Label( "2","40px Consolas",  "#000000",  config.Screen.CENTER_X + 150,config.Screen.CENTER_Y + 80);
+            this._dice2Label = new objects.Label( "2","40px Consolas",  "#FFF",  config.Screen.CENTER_X + 150,config.Screen.CENTER_Y + 80);
             this.addChild(this._dice2Label);
             
             
@@ -82,8 +84,6 @@ module scenes {
             
             this._dice1Image.image = assets.getResult("Dice"+this._dice1Number);
             this._dice2Image.image = assets.getResult("Dice"+this._dice2Number);
-
-                        
         }
         
     }

@@ -15,6 +15,9 @@ var scenes;
         // PUBLIC METHODS ++++++++++++++++++++
         // Start Method
         End.prototype.start = function () {
+            // add background image to the scene
+            this._backgroundImage = new createjs.Bitmap(assets.getResult("PlayBackground"));
+            this.addChild(this._backgroundImage);
             //Add Menu Label
             this._endLabel = new objects.Label("END SCENE", "60px Consolas", "#000000", config.Screen.CENTER_X, config.Screen.CENTER_Y);
             this.addChild(this._endLabel);

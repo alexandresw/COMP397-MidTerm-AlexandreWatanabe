@@ -15,6 +15,9 @@ var scenes;
         // PUBLIC METHODS +++++++++++++++++++++
         // Start Method
         Play.prototype.start = function () {
+            // add background image to the scene
+            this._backgroundImage = new createjs.Bitmap(assets.getResult("PlayBackground"));
+            this.addChild(this._backgroundImage);
             this._dice1Image = new createjs.Bitmap(assets.getResult("Dice1"));
             this._dice1Image.x = config.Screen.CENTER_X - 250;
             this._dice1Image.y = 50;
@@ -24,10 +27,10 @@ var scenes;
             this._dice2Image.y = 50;
             this.addChild(this._dice2Image);
             //Add Play Label
-            this._dice1Label = new objects.Label("1", "40px Consolas", "#000000", config.Screen.CENTER_X - 150, config.Screen.CENTER_Y + 80);
+            this._dice1Label = new objects.Label("1", "40px Consolas", "#FFF", config.Screen.CENTER_X - 150, config.Screen.CENTER_Y + 80);
             this.addChild(this._dice1Label);
             //Add Play Label
-            this._dice2Label = new objects.Label("2", "40px Consolas", "#000000", config.Screen.CENTER_X + 150, config.Screen.CENTER_Y + 80);
+            this._dice2Label = new objects.Label("2", "40px Consolas", "#FFF", config.Screen.CENTER_X + 150, config.Screen.CENTER_Y + 80);
             this.addChild(this._dice2Label);
             // add the BACK button to the OVER scene
             this._rollButton = new objects.Button("RollDices", config.Screen.CENTER_X, config.Screen.CENTER_Y + 180);

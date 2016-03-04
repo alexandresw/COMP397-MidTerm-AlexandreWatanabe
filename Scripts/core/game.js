@@ -21,6 +21,8 @@ var assetData = [
     { id: "Dice5", src: "../../Assets/images/Dice5.png" },
     { id: "Dice6", src: "../../Assets/images/Dice6.png" },
     { id: "RollDices", src: "../../Assets/images/RollDices.png" },
+    { id: "PlayBackground", src: "../../Assets/images/PlayBackground.jpg" },
+    { id: "MenuBackground", src: "../../Assets/images/MenuBackground.jpg" }
 ];
 function preload() {
     assets = new createjs.LoadQueue();
@@ -42,7 +44,7 @@ function init() {
     // sets up our stats counting workflow
     setupStats();
     // set initial scene
-    scene = config.Scene.PLAY;
+    scene = config.Scene.MENU;
     changeScene();
 }
 // Main Game Loop function that handles what happens each "tick" or frame

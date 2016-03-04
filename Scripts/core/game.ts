@@ -25,7 +25,8 @@ var assetData:objects.Asset[] = [
     {id: "Dice5", src:"../../Assets/images/Dice5.png"},
     {id: "Dice6", src:"../../Assets/images/Dice6.png"},
     {id: "RollDices", src:"../../Assets/images/RollDices.png"},
-
+    {id: "PlayBackground", src:"../../Assets/images/PlayBackground.jpg"},
+    {id: "MenuBackground", src:"../../Assets/images/MenuBackground.jpg"}
 ];
 
 function preload() {
@@ -55,7 +56,7 @@ function init(): void {
     setupStats(); 
     
     // set initial scene
-    scene = config.Scene.PLAY;
+    scene = config.Scene.MENU;
     changeScene();
 }
 
